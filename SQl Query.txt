@@ -1,0 +1,26 @@
+//3.Write a SQL query to Rename the column name.
+
+
+ALTER TABLE tableName RENAME COLUMN column1 TO column2;
+
+example:
+ALTER TABLE employee RENAME COLUMN Name TO EmpName;
+
+
+
+//4.Write a SQL query to find duplicate records.
+
+->Duplicate records can be find by using GROUPBY and COUNT function.
+->GROUPBY is used to group all the rows and columns to check for duplicates.
+->COUNT is used to count the number of times the duplicate values is occured.
+
+example:
+
+selecting ORDERID from the EMPLOYEE_TABLE to find the duplicate values.
+
+SELECT OrderID, COUNT(OrderID)
+FROM Orders
+GROUP BY OrderID
+HAVING COUNT(OrderID) > 1
+
+here, if the COUNT is greater than 1, then the duplicate values occured more than once.
